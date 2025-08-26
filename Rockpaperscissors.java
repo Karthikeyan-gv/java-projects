@@ -1,8 +1,10 @@
+//import java.util.Random;
 import java.util.Scanner;
 
 public class Rockpaperscissors {
 
     public static void main(String[] args) {
+
         int userChoice,randomNumber;
 
         System.out.println("WELCOME TO GAME");
@@ -18,33 +20,31 @@ public class Rockpaperscissors {
             userChoice=input.nextInt();
         }
 
-        switch (userChoice) {
-            case 1:
-                System.out.printf("\nYOUR CHOICE IS %s",computerChoice[0]);
-                System.out.printf("\nMY CHOICE IS %s",computerChoice[randomNumber]);
-                break;
-            case 2:
-                System.out.printf("\nYOUR CHOICE IS %s",computerChoice[1]);
-                System.out.printf("\nMY CHOICE IS %s",computerChoice[randomNumber]);
-                break;
-            case 3:
-                System.out.printf("\nYOUR CHOICE IS %s",computerChoice[2]);
-                System.out.printf("\nMY CHOICE IS %s",computerChoice[randomNumber]);
-                break;
-            default:
-                System.out.println("CHOICE NOT FOUND!");
-                break;
-        }
+        System.out.printf("\nYOUR CHOICE IS %s",computerChoice[userChoice-1]);
+        System.out.printf("\nMY CHOICE IS %s",computerChoice[randomNumber]);
 
-        // if(computerChoice[userChoice]==computerChoice[randomNumber]){
-        //     System.out.println("\nDRAW!");
-        // }
-        // else if () {
-        //     System.out.println("\nYOU WIN!");
-        // }
-        // else {
-        //     System.out.println("\nYOU LOSS!");
-        // }
+        System.out.print("\n--------------------");
+        if (computerChoice[userChoice-1]=="ROCK" && computerChoice[randomNumber]=="SCISSORS") {
+            System.out.println("\nYOU WIN!");
+        }
+        else if (computerChoice[userChoice-1]=="SCISSORS" && computerChoice[randomNumber]=="PAPER") {
+            System.out.println("\nYOU WIN!");
+        }
+        else if (computerChoice[userChoice-1]=="PAPER" && computerChoice[randomNumber]=="ROCK") {
+            System.out.println("\nYOU WIN!");
+        }
+        else if (computerChoice[userChoice-1]=="ROCK" && computerChoice[randomNumber]=="ROCK") {
+            System.out.println("\nDRAW!");
+        }
+        else if (computerChoice[userChoice-1]=="PAPER" && computerChoice[randomNumber]=="PAPER") {
+            System.out.println("\nDRAW!");
+        }
+        else if (computerChoice[userChoice-1]=="SCISSORS" && computerChoice[randomNumber]=="SCISSORS") {
+            System.out.println("\nDRAW!");
+        }
+        else {
+            System.out.println("\nYOU LOSS!");
+        }
 
     }
 }
